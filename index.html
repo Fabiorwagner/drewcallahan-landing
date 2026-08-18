@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Jobs Suck, Keep Yours — Drew Callahan</title>
+    <meta name="description" content="A cynical, practical, and surprisingly hopeful guide to surviving the corporate grind — without quitting, without panicking, and without posting 'so excited to announce' on LinkedIn.">
+    <meta property="og:title" content="All Jobs Suck, Keep Yours — Drew Callahan">
+    <meta property="og:description" content="The book about corporate survival written by someone still inside the machine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drewcallahan.net">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --neon: #E8FF00;
+            --black: #1A1A1A;
+            --gray: #555555;
+            --light-gray: #9E9E9E;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--neon);
+            padding: 80px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--black);
+            color: var(--neon);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            margin: 8px;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-secondary:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* DATA SECTION */
+        .data-section {
+            padding: 80px 24px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .data-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            margin-bottom: 16px;
+        }
+
+        .data-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .data-card {
+            padding: 40px 24px;
+            border: 2px solid var(--off-white);
+            border-radius: 12px;
+            background: var(--off-white);
+        }
+
+        .data-card .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--black);
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .data-card .number .accent {
+            color: var(--neon);
+            -webkit-text-stroke: 1.5px var(--black);
+        }
+
+        .data-card .label {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        .data-source {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-top: 16px;
+        }
+
+        /* WHAT'S INSIDE */
+        .inside-section {
+            padding: 80px 24px;
+            background: var(--off-white);
+        }
+
+        .inside-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .inside-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+
+        .inside-list {
+            list-style: none;
+        }
+
+        .inside-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid #E0E0E0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .inside-list li:last-child {
+            border-bottom: none;
+        }
+
+        .inside-list strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .inside-list .dash {
+            color: var(--light-gray);
+        }
+
+        /* WHO THIS IS FOR */
+        .who-section {
+            padding: 80px 24px;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .who-inner {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .who-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .who-section p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #CCCCCC;
+            margin-bottom: 16px;
+        }
+
+        .who-section .highlight {
+            color: var(--neon);
+            font-weight: 600;
+        }
+
+        /* LEAD CAPTURE */
+        .lead-section {
+            padding: 80px 24px;
+            background: var(--neon);
+            text-align: center;
+        }
+
+        .lead-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .lead-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-section p {
+            font-size: 1.05rem;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .lead-form input[type="email"] {
+            padding: 16px 20px;
+            font-size: 1rem;
+            border: 2px solid var(--black);
+            border-radius: 6px;
+            background: var(--white);
+            outline: none;
+            font-family: inherit;
+        }
+
+        .lead-form input[type="email"]:focus {
+            border-color: var(--black);
+            box-shadow: 0 0 0 3px rgba(26,26,26,0.1);
+        }
+
+        .lead-form button {
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            font-family: inherit;
+        }
+
+        .lead-form button:hover {
+            transform: translateY(-2px);
+        }
+
+        .lead-privacy {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 20px;
+        }
+
+        /* CLOSING */
+        .closing {
+            padding: 80px 24px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .closing-inner {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .closing blockquote {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--black);
+            margin-bottom: 40px;
+            padding: 0;
+            border: none;
+        }
+
+        .closing blockquote .yellow-mark {
+            background: var(--neon);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .closing .btn-primary {
+            background: var(--neon);
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .closing .btn-primary:hover {
+            background: var(--black);
+            color: var(--neon);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 24px;
+            background: var(--off-white);
+            text-align: center;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            line-height: 1.5;
+        }
+
+        footer .footer-name {
+            font-weight: 700;
+            color: var(--gray);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .sub { font-size: 1rem; }
+            .data-grid { grid-template-columns: 1fr; }
+            .data-card .number { font-size: 2.4rem; }
+            .data-section h2,
+            .inside-section h2,
+            .lead-section h2,
+            .who-section h2 { font-size: 1.6rem; }
+            .closing blockquote { font-size: 1.1rem; }
+            .btn { display: block; width: 100%; max-width: 320px; margin: 8px auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <span class="hero-badge">Available Now on Amazon</span>
+        <h1>Your job is bad. It's probably not going to get better. And that's the best news you'll hear all day.</h1>
+        <p class="sub">A cynical, practical, and surprisingly hopeful guide to surviving the corporate grind — without quitting, without panicking, and without posting "so excited to announce" on LinkedIn.</p>
+        <a href="https://www.amazon.com/dp/YOUR_ASIN_HERE" class="btn btn-primary" target="_blank" rel="noopener">Get the Book on Amazon →</a>
+        <a href="#free-framework" class="btn btn-secondary">Get the Free "Should I Quit?" Framework</a>
+    </div>
+</section>
+
+<!-- DATA SECTION -->
+<section class="data-section">
+    <div class="data-inner">
+        <p class="section-label">The Data Nobody Talks About</p>
+        <h2>The numbers they don't put in the LinkedIn post</h2>
+        <div class="data-grid">
+            <div class="data-card">
+                <div class="number"><span class="accent">80%</span></div>
+                <div class="label">of people who quit during the Great Resignation regretted it</div>
+            </div>
+            <div class="data-card">
+                <div class="number"><span class="accent">$100K+</span></div>
+                <div class="label">in invisible assets forfeited when you leave a job after 3 years</div>
+            </div>
+            <div class="data-card">
+                <div class="number"><span class="accent">20%</span></div>
+                <div class="label">global employee engagement — the lowest since 2020</div>
+            </div>
+            <div class="data-card">
+                <div class="number"><span class="accent">42%</span></div>
+                <div class="label">of job switchers say their new position didn't meet expectations</div>
+            </div>
+        </div>
+        <p class="data-source">Sources: CNBC, The Conference Board, Gallup. Full breakdown in the book.</p>
+    </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section">
+    <div class="inside-inner">
+        <p class="section-label" style="text-align:center;">What You'll Find Inside</p>
+        <h2>Six frameworks. Zero motivational quotes.</h2>
+        <ul class="inside-list">
+            <li><strong>The 80% Regret Rate</strong> <span class="dash">—</span> Why 8 out of 10 quitters wish they hadn't, with the data to prove it</li>
+            <li><strong>The Invisible Balance Sheet</strong> <span class="dash">—</span> The $100,000 in political capital, knowledge, and autonomy you can't see but definitely lose</li>
+            <li><strong>The Golden Handcuffs Formula</strong> <span class="dash">—</span> A step-by-step system for calculating the TRUE cost of quitting</li>
+            <li><strong>The Side Door Strategy</strong> <span class="dash">—</span> How to build a business on weekends while your salary pays the bills</li>
+            <li><strong>The "Should I Quit?" Framework</strong> <span class="dash">—</span> A 5-question decision matrix that replaces emotion with math</li>
+            <li><strong>The Quiet Millionaires</strong> <span class="dash">—</span> Real stories of people who stayed, saved, compounded, and retired early</li>
+        </ul>
+    </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="who-section">
+    <div class="who-inner">
+        <p class="section-label" style="color:#888;">This Is For You If...</p>
+        <h2>You've ever stared at a spreadsheet at 4:47 PM and wondered: <span class="highlight">"Is this it?"</span></h2>
+        <p>It's not. But for the next few years, it might have to be.</p>
+        <p>This is for the survivors — the people who know their job isn't fulfilling but also know that quitting without a plan is worse than staying with one.</p>
+    </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section class="lead-section" id="free-framework">
+    <div class="lead-inner">
+        <p class="section-label">Free Companion Resource</p>
+        <h2>Get the "Should I Quit?" Framework</h2>
+        <p>A 5-question decision matrix calculator that helps you determine whether leaving your job is the right move or an expensive mistake.</p>
+
+        <!-- CONVERTKIT FORM — Replace this block with your ConvertKit embed code -->
+        <form class="lead-form" action="https://app.convertkit.com/forms/YOUR_FORM_ID/submissions" method="post">
+            <input type="email" name="email_address" placeholder="Your email address" required>
+            <button type="submit">Send Me the Framework →</button>
+        </form>
+        <!-- END CONVERTKIT FORM -->
+
+        <p class="lead-privacy">No spam. No motivational quotes. Just the framework and occasional dispatches from inside the machine.</p>
+    </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+    <div class="closing-inner">
+        <blockquote>
+            "All jobs suck. Keep yours — for now. Because the cost of leaving is higher than you think, the invisible assets are real, and the <span class="yellow-mark">side door</span> is safer than the front gate."
+        </blockquote>
+        <a href="https://www.amazon.com/dp/YOUR_ASIN_HERE" class="btn btn-primary" target="_blank" rel="noopener">Get the Book on Amazon →</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p><span class="footer-name">Drew Callahan</span> | Author of "All Jobs Suck, Keep Yours"</p>
+    <p>Name changed to protect the employed.</p>
+</footer>
+
+</body>
+</html>
